@@ -1,0 +1,182 @@
+// import font
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+// reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 14px;
+}
+
+// create variables for colors
+$primary-dark-cyan: hsl(158, 36%, 37%);
+$darker-cyan: hsl(158, 37%, 24%);
+$primary-cream: hsl(30, 38%, 92%);
+$neutral-very-dark-blue: hsl(212, 21%, 14%);
+$neutral-dark-grayish-blue: hsl(228, 12%, 48%);
+$neutral-white: hsl(0, 0%, 100%);
+
+// create variables for fonts
+$fraunces-serif-font: 'Fraunces';
+$montserrat-sans-serif-font: 'Montserrat';
+
+
+// styles for body
+body {
+    min-height: 100vh;
+    background-color: $primary-cream;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    max-width: 1440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .card {
+        width: 600px;
+        background-color: $neutral-white;
+        display: flex;
+        border-radius: 10px;
+        overflow: hidden;
+
+
+        .img {
+            width: 50%;
+            background-image: url(images/image-product-desktop.jpg);
+            background-position: center;
+            background-size: cover;
+        
+            // img {
+            //     width: 100%;
+            //     height: 100%;
+            // }
+        }
+
+
+        .card-content {
+            width: 50%;
+            padding-inline: 30px;
+            padding-block: 30px;
+        
+            p:first-of-type {
+                font-size: 1rem;
+                font-weight: 500;
+                font-family: $montserrat-sans-serif-font;
+                color: $neutral-dark-grayish-blue;
+                letter-spacing: 4px;
+            }
+        
+            h1:first-of-type {
+                font-size: 2.6rem;
+                font-family: $fraunces-serif-font;
+                font-weight: 700;
+                color: $neutral-very-dark-blue;
+                margin-block: 16px;
+        
+            }
+        
+            p:nth-of-type(2) {
+                font-size: 1rem;
+                font-weight: 500;
+                font-family: $montserrat-sans-serif-font;
+                color: $neutral-dark-grayish-blue;
+                line-height: 1.4;
+            }
+        
+            .price-box {
+                margin-block: 20px;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+        
+                .big {
+                    font-size: 2rem;
+                    font-weight: 700;
+                    font-family: $fraunces-serif-font;
+                    color: $primary-dark-cyan;
+                }
+        
+                .small {
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                    font-family: $montserrat-sans-serif-font;
+                    color: $neutral-dark-grayish-blue;
+                    text-decoration: line-through;
+                }
+            }
+        
+            .add-to-cart-btn {
+                outline: none;
+                border: none;
+                appearance: none;
+                background-color: $primary-dark-cyan;
+                padding: 14px 20px;
+                margin-block-start: 30px;
+                border-radius: 8px;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 12px;
+        
+                span {
+                    color: $neutral-white;
+                    font-weight: 700;
+                    font-family: $montserrat-sans-serif-font;
+                    font-size: 1rem;
+                }
+            }
+        
+            .add-to-cart-btn:active {
+                background-color: $darker-cyan;
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+// media query for mobile screen for 375px below
+@media (max-width: 600px) {
+    .main-container {
+        max-width: 375px;
+        
+        .card {
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .img {
+                width: 100%;
+                height: 300px;
+                background-image: url('images/image-product-mobile.jpg');
+                background-position: center;
+                background-size: cover;
+
+                // img {
+                //     height: ;
+                // }
+            }
+
+            .card-content {
+                width: 100%;
+                padding-inline: 30px;
+                padding-block: 30px;
+            }
+        }
+    }
+}
